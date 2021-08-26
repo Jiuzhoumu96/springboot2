@@ -4,6 +4,7 @@ import com.sun.management.OperatingSystemMXBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import oshi.SystemInfo;
+import oshi.hardware.CentralProcessor;
 import oshi.hardware.GlobalMemory;
 import oshi.hardware.HardwareAbstractionLayer;
 
@@ -118,14 +119,8 @@ public class OSUtils {
      * @return cpu usage
      */
     public static double cpuUsage() {
-        OperatingSystemMXBean osmxb = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
-        double cpuUsage = osmxb.getSystemCpuLoad();
-        logger.info(">>>>>> OSUtils.cpuUsage: cpuUsage = {}",cpuUsage);
-        // double percentCpuLoad = cpuUsage * 100;
-        // return percentCpuLoad;
-
-        // CentralProcessor processor = hal.getProcessor();
-        // double cpuUsage = processor.getSystemCpuLoad();
+        CentralProcessor processor = hal.getProcessor();
+        double cpuUsage = processor.getSystemCpuLoadBetweenTicks(processor.getSystemCpuLoadTicks());
         DecimalFormat df = new DecimalFormat(TWO_DECIMAL);
         df.setRoundingMode(RoundingMode.HALF_UP);
         logger.info(">>>>>> OSUtils.cpuUsage: Double.parseDouble(df.format(cpuUsage)) = {}",Double.parseDouble(df.format(cpuUsage)));
