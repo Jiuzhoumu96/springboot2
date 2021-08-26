@@ -1,5 +1,6 @@
 package com.dokstudio.springboot2.controller;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,8 +18,10 @@ public class UserController {
 
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    @RequestMapping("/huge.png")
+    @RequestMapping("/huge")
     public String huge() {
+        StringUtils.equals("123","123");
+
         logger.info(">>>>>> huge");
         return "huge";
     }
