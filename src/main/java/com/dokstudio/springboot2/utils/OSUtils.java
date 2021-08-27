@@ -120,7 +120,13 @@ public class OSUtils {
      */
     public static double cpuUsage() {
         CentralProcessor processor = hal.getProcessor();
-        double cpuUsage = processor.getSystemCpuLoadBetweenTicks(processor.getSystemCpuLoadTicks());
+        long[] systemCpuLoadTicks = processor.getSystemCpuLoadTicks();
+        logger.info(">>>>>>OSUtils.cpuUsage: systemCpuLoadTicks.length = {}",systemCpuLoadTicks.length);
+        for (int i = 0; i < systemCpuLoadTicks.length; i++) {
+            logger.info(">>>>>>OSUtils.cpuUsage: systemCpuLoadTicks[{}] = {}",i,systemCpuLoadTicks[i]);
+        }
+        double cpuUsage = processor.getSystemCpuLoadBetweenTicks(systemCpuLoadTicks);
+        // double cpuUsage = processor.getSystemCpuLoadBetweenTicks(processor.getSystemCpuLoadTicks());
         DecimalFormat df = new DecimalFormat(TWO_DECIMAL);
         df.setRoundingMode(RoundingMode.HALF_UP);
         logger.info(">>>>>> OSUtils.cpuUsage: Double.parseDouble(df.format(cpuUsage)) = {}",Double.parseDouble(df.format(cpuUsage)));
