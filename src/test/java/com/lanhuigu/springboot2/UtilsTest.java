@@ -1,6 +1,6 @@
-package com.dokstudio.springboot2;
+package com.lanhuigu.springboot2;
 
-import com.dokstudio.springboot2.utils.OSUtils;
+import com.lanhuigu.springboot2.utils.OSUtils;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

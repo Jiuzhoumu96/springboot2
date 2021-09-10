@@ -1,4 +1,4 @@
-package com.dokstudio.springboot2;
+package com.lanhuigu.springboot2.controller;
 
 /**
  * @author Jiuzhoumu

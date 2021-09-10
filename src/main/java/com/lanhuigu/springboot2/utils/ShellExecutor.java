@@ -1,4 +1,4 @@
-package com.dokstudio.springboot2.utils;
+package com.lanhuigu.springboot2.utils;
 
 import java.io.BufferedReader;
 import java.io.File;

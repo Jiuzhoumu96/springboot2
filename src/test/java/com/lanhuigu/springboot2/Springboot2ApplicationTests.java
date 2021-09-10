@@ -1,4 +1,4 @@
-package com.dokstudio.springboot2;
+package com.lanhuigu.springboot2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

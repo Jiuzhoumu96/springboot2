@@ -1,4 +1,4 @@
-package com.dokstudio.springboot2.controller;
+package com.lanhuigu.springboot2.controller;
 
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
