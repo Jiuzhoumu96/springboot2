@@ -20,9 +20,13 @@ public class UserController {
 
     @RequestMapping("/huge")
     public String huge() {
-        StringUtils.equals("123","123");
+        boolean b = StringUtils.equals("123", "123");
 
+        String alert = "警告，警告！";
+        String warn = "warn,warn!";
         logger.info(">>>>>> huge");
+        logger.warn("{}! alert = {}", warn, alert);
+        logger.warn(">>>>>> huge");
         return "huge";
     }
 
